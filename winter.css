@@ -99,6 +99,7 @@ body {
 .stay-row:focus-visible,
 .day-item:focus-visible,
 .section-back:focus-visible,
+.map-menu summary:focus-visible,
 .btn:focus-visible {
   outline: 3px solid #b8dce8;
   outline-offset: 3px;
@@ -258,21 +259,62 @@ body.section-open .hero {
   font-size: 13px;
 }
 
-.map-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 7px;
+.map-menu {
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
 }
 
-.map-actions > span {
-  flex: 1 1 100%;
+.map-menu summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--green);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  list-style: none;
+}
+
+.map-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.map-menu summary::after {
+  content: "+";
+  margin-left: 7px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.map-menu[open] summary::after {
+  content: "−";
+}
+
+.map-menu summary:hover {
+  border-color: var(--green);
+}
+
+.map-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.map-note {
+  margin: 8px 0 0;
   color: var(--muted);
   font-size: 12px;
-  font-weight: 700;
+}
+
+.map-note a {
+  color: var(--green);
 }
 
 .map-btn {
@@ -287,6 +329,7 @@ body.section-open .hero {
   color: var(--green);
   font-size: 12px;
   font-weight: 800;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -439,13 +482,18 @@ body.section-open .hero {
     grid-template-columns: 1fr;
   }
 
-  .map-actions {
-    align-items: stretch;
-  }
-
   .map-btn {
     flex: 1 1 0;
     min-width: 0;
+  }
+
+  .map-menu summary {
+    width: 100%;
+  }
+
+  .map-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .route-card {
