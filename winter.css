@@ -258,6 +258,50 @@ body.section-open .hero {
   font-size: 13px;
 }
 
+.map-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.map-actions > span {
+  flex: 1 1 100%;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.map-btn:hover {
+  border-color: var(--green);
+}
+
+.map-btn.google {
+  background: #eef5f8;
+}
+
+.map-btn.apple {
+  background: #f3f3f3;
+}
+
 .card,
 .summary-card {
   border-radius: 10px;
@@ -393,6 +437,15 @@ body.section-open .hero {
   .day-flow-grid,
   .placeholder-grid {
     grid-template-columns: 1fr;
+  }
+
+  .map-actions {
+    align-items: stretch;
+  }
+
+  .map-btn {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .route-card {
