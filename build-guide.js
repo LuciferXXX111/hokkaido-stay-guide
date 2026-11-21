@@ -1,5 +1,6 @@
 const fs=require('fs');
 const path='C:/Users/Ludwig/Documents/ChatGPT/北海道/hokkaido-stay-guide.html';
+const indexPath='C:/Users/Ludwig/Documents/ChatGPT/北海道/index.html';
 const trip={
  title:'北海道之旅',startDate:'2027-01-11',endDate:'2027-01-19',mode:'guide-redesign',language:'zh-CN',destination:{name:'札幌 小樽 美瑛',bbox:[42.8,140.7,43.4,142.8]},theme:['温泉','风景','轻松旅行'],pace:'balanced',party:{adults:2,children:[],accessibility:[],medication:[]},assumptions:['旅行日期为2027年1月11日至1月19日，共9天8晚','住宿顺序：1月11–14日札幌、14–15日小樽、15–17日美瑛、17–19日札幌','美瑛民宿以Google地图搜索 Biei J-dog 为准，未写入未经确认的门牌地址','札幌酒店改为札幌公园饭店（中岛公园），不再使用格兰贝尔酒店'],weather:{seasonalAverages:'北海道一月通常寒冷且可能积雪，具体天气需临近出发查询',climateShiftDisclaimer:'历史平均可能低估极端天气；请在出发前1–2周重新查看札幌和美瑛天气、暴雪及交通公告。',advisories:['雪天步行时间会明显增加，行李路线优先选择地下通道和出租车']},tripPrep:{visa:'中国大陆居民赴日本的签证和入境要求请以日本驻华使领馆及航空公司最新要求为准。',transitVisa:'如经第三国转机，请单独核对转机签证要求。',payment:'准备可境外线上支付的Visa或Mastercard；同时保留实体卡和少量日元。',sim:'提前准备日本eSIM或机场/市区通信方案。',insurance:'建议购买覆盖医疗、行李延误和交通取消的旅行保险。',etiquette:['温泉前先淋浴，毛巾不要放进浴池','日本酒店通常需要护照登记，入住时准备预订姓名和确认邮件'],festivalOverlap:'2027年1月为日本冬季出行期，节假日和降雪可能影响铁路与入住时间，出发前复核。'},
  transport:[
@@ -31,3 +32,4 @@ const sectionScript=`<script>(function(){const sections=[...document.querySelect
 outputHtml=outputHtml.replace('</body>',`${sectionScript}</body>`);
 if(outputHtml===html) throw new Error('Could not find flight section insertion point');
 fs.writeFileSync(path,outputHtml,'utf8'); console.log(path);
+fs.writeFileSync(indexPath,outputHtml,'utf8'); console.log(indexPath);
